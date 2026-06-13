@@ -121,7 +121,7 @@ function Compare({
   tone: "muted" | "accent";
 }) {
   return (
-    <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-4">
+    <div className="rounded-2xl border border-line/8 bg-line/[0.02] p-4">
       <span className="text-xs uppercase tracking-wider text-mist-400">{label}</span>
       <div
         className={`mt-1 text-2xl font-semibold ${tone === "accent" ? "text-mist-50" : "text-mist-400"}`}

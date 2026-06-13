@@ -100,6 +100,17 @@ utilities. Colour is punctuation, not decoration.
 - **Motion** — `--ease-out-expo`, `--ease-spring`; keyframes for aurora, marquee, shimmer
 - **Composition utilities** — `.surface`, `.surface-raised`, `.text-gradient-accent`, `.grid-noise`, `.container-px`
 
+### Theming (light / dark)
+
+The site is dark-first with a full light theme, toggled from the navbar (`next-themes`,
+class strategy, no flash-of-wrong-theme). Rather than rewriting every component, light
+mode **flips the token values** under `html.light`: the `ink-*` / `mist-*` scales invert,
+and two themeable overlay tokens — `--color-line` (hairlines, subtle fills, hover
+surfaces) and `--color-strong` (max-contrast text) — swap from white to near-black. Every
+utility resolves through `var(--color-*)`, so changing the class recolours the whole site
+with zero markup edits. Colours that sit on constant gradients (logo, accent buttons,
+cover badges) intentionally stay fixed.
+
 ## Animation strategy
 
 Meaningful, never decorative. Scroll-triggered reveals (`Reveal`/`Stagger`) fade,

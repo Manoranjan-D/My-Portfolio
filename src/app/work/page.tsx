@@ -36,7 +36,7 @@ export default function WorkPage() {
               <Reveal key={cs.slug} delay={i * 0.05}>
                 <Link
                   href={`/work/${cs.slug}`}
-                  className="surface group block overflow-hidden rounded-3xl transition-colors hover:border-white/15"
+                  className="surface group block overflow-hidden rounded-3xl transition-colors hover:border-line/15"
                 >
                   <div
                     className="relative h-40 overflow-hidden md:h-52"
@@ -45,19 +45,19 @@ export default function WorkPage() {
                     <div className="absolute inset-0 grid-noise opacity-25 mix-blend-overlay" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-850/90 to-transparent" />
                     <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between">
-                      <div className="flex items-center gap-2.5 text-xs text-white/80">
+                      <div className="flex items-center gap-2.5 text-xs text-line/80">
                         <span>{cs.year}</span>
-                        <span className="h-1 w-1 rounded-full bg-white/50" />
+                        <span className="h-1 w-1 rounded-full bg-line/50" />
                         <span>{cs.category}</span>
                       </div>
                       <ArrowUpRight
                         size={22}
-                        className="text-white/70 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+                        className="text-line/70 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
                       />
                     </div>
                   </div>
                   <div className="p-6 md:p-8">
-                    <h2 className="text-balance text-2xl font-semibold tracking-tight text-mist-50 group-hover:text-white md:text-3xl">
+                    <h2 className="text-balance text-2xl font-semibold tracking-tight text-mist-50 group-hover:text-strong md:text-3xl">
                       {cs.title}
                     </h2>
                     <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-mist-300">

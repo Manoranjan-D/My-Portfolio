@@ -35,17 +35,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     code: (props) => (
       <code
-        className="rounded-md border border-white/10 bg-white/5 px-1.5 py-0.5 font-mono text-[0.85em] text-electric-300"
+        className="rounded-md border border-line/10 bg-line/5 px-1.5 py-0.5 font-mono text-[0.85em] text-electric-300"
         {...props}
       />
     ),
     pre: (props) => (
       <pre
-        className="mt-6 overflow-x-auto rounded-2xl border border-white/8 bg-ink-950 p-5 font-mono text-sm text-mist-200"
+        className="mt-6 overflow-x-auto rounded-2xl border border-line/8 bg-ink-950 p-5 font-mono text-sm text-mist-200"
         {...props}
       />
     ),
-    hr: () => <hr className="my-10 border-white/8" />,
+    hr: () => <hr className="my-10 border-line/8" />,
     strong: (props) => <strong className="font-semibold text-mist-100" {...props} />,
     ...components,
   };

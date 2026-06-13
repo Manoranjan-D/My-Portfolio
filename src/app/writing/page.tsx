@@ -48,7 +48,7 @@ export default function WritingPage() {
                 <div className="grid md:grid-cols-[1fr_0.9fr]">
                   <div className="relative min-h-48 overflow-hidden bg-gradient-to-br from-electric-500 to-violet-500 md:min-h-full">
                     <div className="absolute inset-0 grid-noise opacity-25 mix-blend-overlay" />
-                    <span className="absolute left-6 top-6 rounded-full bg-ink-950/40 px-3 py-1 text-xs text-white backdrop-blur">
+                    <span className="absolute left-6 top-6 rounded-full bg-black/30 px-3 py-1 text-xs text-white backdrop-blur">
                       Featured
                     </span>
                   </div>
@@ -59,7 +59,7 @@ export default function WritingPage() {
                       <span className="h-1 w-1 rounded-full bg-mist-500" />
                       <span>{hero.readingTime}</span>
                     </div>
-                    <h2 className="mt-4 text-balance text-2xl font-semibold tracking-tight text-mist-50 group-hover:text-white md:text-3xl">
+                    <h2 className="mt-4 text-balance text-2xl font-semibold tracking-tight text-mist-50 group-hover:text-strong md:text-3xl">
                       {hero.title}
                     </h2>
                     <p className="mt-4 text-pretty leading-relaxed text-mist-300">
@@ -80,13 +80,13 @@ export default function WritingPage() {
                 <Reveal key={p.slug} delay={i * 0.05}>
                   <Link
                     href={`/writing/${p.slug}`}
-                    className="surface group flex h-full flex-col rounded-3xl p-7 transition-colors hover:border-white/15"
+                    className="surface group flex h-full flex-col rounded-3xl p-7 transition-colors hover:border-line/15"
                   >
                     <div className="flex items-center gap-3 text-xs text-mist-400">
                       <span className="text-electric-300">{p.category}</span>
                       <span>{p.readingTime}</span>
                     </div>
-                    <h3 className="mt-3 text-balance text-xl font-semibold text-mist-50 group-hover:text-white">
+                    <h3 className="mt-3 text-balance text-xl font-semibold text-mist-50 group-hover:text-strong">
                       {p.title}
                     </h3>
                     <p className="mt-2.5 flex-1 text-sm leading-relaxed text-mist-300">

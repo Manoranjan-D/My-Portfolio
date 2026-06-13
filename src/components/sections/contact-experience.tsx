@@ -49,13 +49,13 @@ export function ContactExperience() {
                 "flex w-full items-center gap-4 rounded-2xl border p-4 text-left transition-all duration-300",
                 isActive
                   ? "border-electric-400/50 bg-electric-400/[0.07]"
-                  : "border-white/8 bg-white/[0.02] hover:border-white/20",
+                  : "border-line/8 bg-line/[0.02] hover:border-line/20",
               )}
             >
               <span
                 className={cn(
                   "grid h-10 w-10 shrink-0 place-items-center rounded-xl transition-colors",
-                  isActive ? "bg-electric-500 text-white" : "bg-white/5 text-mist-300",
+                  isActive ? "bg-electric-500 text-white" : "bg-line/5 text-mist-300",
                 )}
               >
                 <i.icon size={18} />
@@ -82,7 +82,7 @@ export function ContactExperience() {
               exit={{ opacity: 0 }}
               className="flex h-full min-h-72 flex-col items-center justify-center text-center"
             >
-              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-white/5 text-mist-400">
+              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-line/5 text-mist-400">
                 <ArrowRight size={22} className="-rotate-180 sm:rotate-0" />
               </span>
               <p className="mt-5 max-w-xs text-mist-300">
@@ -164,8 +164,8 @@ export function ContactExperience() {
         .contact-input {
           width: 100%;
           border-radius: 0.85rem;
-          border: 1px solid rgba(255,255,255,0.1);
-          background: rgba(255,255,255,0.03);
+          border: 1px solid var(--color-border);
+          background: color-mix(in srgb, var(--color-line) 3%, transparent);
           padding: 0.7rem 0.9rem;
           font-size: 0.875rem;
           color: var(--color-mist-50);
@@ -175,7 +175,7 @@ export function ContactExperience() {
         .contact-input:focus {
           outline: none;
           border-color: var(--color-electric-400);
-          background: rgba(255,255,255,0.05);
+          background: color-mix(in srgb, var(--color-line) 6%, transparent);
         }
       `}</style>
     </div>

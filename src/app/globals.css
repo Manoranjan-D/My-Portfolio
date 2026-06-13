@@ -38,6 +38,12 @@
   --color-jade-400: #34d39e;
   --color-jade-500: #1fbf86;
 
+  /* Themeable overlay + max-contrast tokens.
+     White in dark mode (so existing overlays are unchanged); flipped to
+     near-black under html.light so borders/hover surfaces darken correctly. */
+  --color-line: #ffffff;
+  --color-strong: #ffffff;
+
   /* Semantic aliases */
   --color-background: var(--color-ink-900);
   --color-foreground: var(--color-mist-100);
@@ -80,6 +86,42 @@
 
 :root {
   color-scheme: dark;
+}
+
+/* ------------------------------------------------------------------ *
+ *  Light theme — flips the surface + foreground scales and the
+ *  overlay tokens. Components keep using ink-/mist-/line- utilities;
+ *  only the token values change, so light mode needs no markup edits.
+ * ------------------------------------------------------------------ */
+html.light {
+  color-scheme: light;
+
+  /* Surfaces: page sits on soft grey, cards rise to pure white */
+  --color-ink-950: #e8ebf0;
+  --color-ink-900: #f6f7f9;
+  --color-ink-850: #ffffff;
+  --color-ink-800: #ffffff;
+  --color-ink-700: #eceef2;
+  --color-ink-600: #dee1e8;
+  --color-ink-500: #c1c7d2;
+
+  /* Foreground: dark ink ramp for legible text on light */
+  --color-mist-50: #0b0d12;
+  --color-mist-100: #1a1e27;
+  --color-mist-200: #343a49;
+  --color-mist-300: #515869;
+  --color-mist-400: #6c7486;
+
+  /* Accents nudged darker for AA contrast on white */
+  --color-electric-300: #2563eb;
+  --color-electric-400: #2563eb;
+  --color-violet-400: #6d4fe0;
+  --color-violet-500: #6d4fe0;
+  --color-jade-400: #0f9d6b;
+
+  --color-line: #0a0d16;
+  --color-strong: #0b0d12;
+  --color-border: rgba(12, 16, 28, 0.1);
 }
 
 * {
@@ -179,4 +221,29 @@ body {
   background-size: 48px 48px;
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
+}
+
+/* Light-theme surface treatment: drop the white sheen, add soft depth. */
+html.light .surface {
+  background: var(--color-ink-850);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.05);
+}
+
+html.light .surface-raised {
+  background: var(--color-ink-800);
+  box-shadow: 0 8px 24px -8px rgba(16, 24, 40, 0.12), 0 2px 6px rgba(16, 24, 40, 0.06);
+}
+
+html.light .grid-noise {
+  background-image:
+    linear-gradient(to right, rgba(12, 16, 28, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(12, 16, 28, 0.05) 1px, transparent 1px);
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: var(--color-ink-700);
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: var(--color-ink-500);
+  border-color: var(--color-ink-700);
 }

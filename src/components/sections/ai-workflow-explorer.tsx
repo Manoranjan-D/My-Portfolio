@@ -21,7 +21,7 @@ export function AiWorkflowExplorer() {
               "group rounded-2xl border p-5 text-left transition-all duration-300",
               active === i
                 ? "border-electric-400/40 bg-electric-400/[0.06]"
-                : "border-white/8 bg-white/[0.02] hover:border-white/15",
+                : "border-line/8 bg-line/[0.02] hover:border-line/15",
             )}
           >
             <div className="flex items-center justify-between">
@@ -42,10 +42,10 @@ export function AiWorkflowExplorer() {
 
       <div className="lg:sticky lg:top-28 lg:self-start">
         <div className="surface-raised overflow-hidden rounded-3xl">
-          <div className="flex items-center gap-2 border-b border-white/8 px-5 py-3">
-            <span className="h-3 w-3 rounded-full bg-white/15" />
-            <span className="h-3 w-3 rounded-full bg-white/15" />
-            <span className="h-3 w-3 rounded-full bg-white/15" />
+          <div className="flex items-center gap-2 border-b border-line/8 px-5 py-3">
+            <span className="h-3 w-3 rounded-full bg-line/15" />
+            <span className="h-3 w-3 rounded-full bg-line/15" />
+            <span className="h-3 w-3 rounded-full bg-line/15" />
             <span className="ml-2 flex items-center gap-1.5 font-mono text-xs text-mist-400">
               <Terminal size={12} /> {item.title.toLowerCase().replace(/\s+/g, "-")}
             </span>
@@ -61,7 +61,7 @@ export function AiWorkflowExplorer() {
             >
               <div>
                 <span className="font-mono text-xs text-electric-400">▸ prompt</span>
-                <p className="mt-2 rounded-xl bg-white/[0.03] p-4 font-mono text-sm leading-relaxed text-mist-200">
+                <p className="mt-2 rounded-xl bg-line/[0.03] p-4 font-mono text-sm leading-relaxed text-mist-200">
                   {item.prompt}
                 </p>
               </div>

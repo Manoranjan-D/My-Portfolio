@@ -53,14 +53,14 @@ export default async function ArticlePage({
         <Container>
           <Link
             href="/writing"
-            className="inline-flex items-center gap-1.5 text-sm text-mist-400 transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 text-sm text-mist-400 transition-colors hover:text-strong"
           >
             <ArrowLeft size={14} /> All writing
           </Link>
           <Reveal>
             <div className="mx-auto mt-8 max-w-2xl">
               <div className="flex items-center gap-3 text-xs text-mist-400">
-                <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-electric-300">
+                <span className="rounded-full border border-line/10 bg-line/5 px-2.5 py-0.5 text-electric-300">
                   {post.category}
                 </span>
                 <span>{formatDate(post.date)}</span>
@@ -79,7 +79,7 @@ export default async function ArticlePage({
       </section>
 
       <Container>
-        <div className="mx-auto max-w-2xl border-t border-white/8 pt-10">
+        <div className="mx-auto max-w-2xl border-t border-line/8 pt-10">
           <Content />
         </div>
       </Container>
