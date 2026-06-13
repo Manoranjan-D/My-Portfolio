@@ -1,0 +1,31 @@
+Most teams treat accessibility as a backlog item — something to "get to" after the feature works. That single framing is why so much software is quietly unusable for so many people. Flip it, and everything downstream changes.
+
+## Treat it as a launch blocker
+
+When accessibility is a backlog item, it competes with features and loses, every sprint, forever. When it's a launch blocker — a thing that fails the build, like a broken test — it stops being optional. The bar moves from "we'll fix it later" to "it doesn't ship broken."
+
+That one policy decision does more for real users than any amount of good intentions.
+
+## It changes how you architect
+
+Accessibility-first isn't about bolting on ARIA at the end. It changes the foundations:
+
+- You reach for **headless primitives** that already handle focus management and keyboard interaction, instead of reinventing them incorrectly.
+- You design **focus order and keyboard paths** as part of the interaction, not an afterthought.
+- You bake **semantics and contrast** into your design tokens, so the accessible choice is the default choice.
+
+When the accessible path is also the path of least resistance, engineers fall into the pit of success without thinking about it.
+
+## Put it in the pipeline
+
+Good intentions don't survive a deadline. Automation does.
+
+1. Run `axe` checks in CI against every component.
+2. Add lint rules for the common failure shapes.
+3. Make screen-reader and keyboard testing part of the review checklist, not a special project.
+
+On one estate, this approach took audited surfaces from an inconsistent, often-failing baseline to a steady Lighthouse accessibility score of 98 — and kept it there, because the pipeline wouldn't let it slip.
+
+## The reframe
+
+Accessibility isn't a feature for a minority of users. It's a baseline quality of the interface, like performance or correctness. It's the floor you build on — not the finish line you hope to reach.
