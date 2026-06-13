@@ -25,7 +25,7 @@ export async function generateMetadata({
 function Block({ section, index }: { section: CaseStudySection; index: number }) {
   return (
     <Reveal>
-      <div className="grid gap-5 border-t border-white/8 py-12 md:grid-cols-[12rem_1fr] md:gap-12">
+      <div className="grid gap-5 border-t border-line/8 py-12 md:grid-cols-[12rem_1fr] md:gap-12">
         <div className="flex items-start gap-3">
           <span className="font-mono text-sm text-electric-400">
             {String(index).padStart(2, "0")}
@@ -87,7 +87,7 @@ export default async function CaseStudyPage({
         <Container>
           <Link
             href="/work"
-            className="inline-flex items-center gap-1.5 text-sm text-mist-400 transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 text-sm text-mist-400 transition-colors hover:text-strong"
           >
             <ArrowLeft size={14} /> All work
           </Link>
@@ -123,7 +123,7 @@ export default async function CaseStudyPage({
 
       {/* meta + metrics */}
       <Container>
-        <div className="mt-14 grid gap-10 border-b border-white/8 pb-14 lg:grid-cols-[1fr_1.3fr]">
+        <div className="mt-14 grid gap-10 border-b border-line/8 pb-14 lg:grid-cols-[1fr_1.3fr]">
           <Reveal>
             <dl className="grid grid-cols-2 gap-6">
               <Meta label="Role">{cs.role.join(" · ")}</Meta>
@@ -160,17 +160,17 @@ export default async function CaseStudyPage({
           <Reveal>
             <Link
               href={`/work/${next.slug}`}
-              className="surface group flex flex-col items-start justify-between gap-5 rounded-3xl p-8 transition-colors hover:border-white/15 md:flex-row md:items-center md:p-10"
+              className="surface group flex flex-col items-start justify-between gap-5 rounded-3xl p-8 transition-colors hover:border-line/15 md:flex-row md:items-center md:p-10"
             >
               <div>
                 <span className="text-xs uppercase tracking-wider text-mist-400">
                   Next case study
                 </span>
-                <h3 className="mt-2 max-w-xl text-balance text-xl font-semibold text-mist-50 group-hover:text-white md:text-2xl">
+                <h3 className="mt-2 max-w-xl text-balance text-xl font-semibold text-mist-50 group-hover:text-strong md:text-2xl">
                   {next.title}
                 </h3>
               </div>
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white/5 text-mist-100 transition-colors group-hover:bg-electric-500 group-hover:text-white">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-line/5 text-mist-100 transition-colors group-hover:bg-electric-500 group-hover:text-strong">
                 <ArrowRight size={18} />
               </span>
             </Link>

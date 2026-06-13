@@ -34,7 +34,7 @@ export default function AboutPage() {
         <Container>
           <SectionHeading eyebrow="My journey" title="A path, not a list of jobs" />
           <div className="relative mt-16">
-            <div className="absolute left-0 top-0 hidden h-full w-px bg-gradient-to-b from-electric-400/40 via-white/10 to-transparent md:left-[8.5rem] md:block" />
+            <div className="absolute left-0 top-0 hidden h-full w-px bg-gradient-to-b from-electric-400/40 via-line/10 to-transparent md:left-[8.5rem] md:block" />
             <div className="space-y-12">
               {journey.map((item, i) => (
                 <Reveal key={item.year} delay={i * 0.04}>

@@ -75,7 +75,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- IMPACT STRIP ---------------- */}
-      <section className="border-y border-white/8 bg-ink-850/40 py-14 backdrop-blur">
+      <section className="border-y border-line/8 bg-ink-850/40 py-14 backdrop-blur">
         <Container>
           <Stagger className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {impactStats.map((s) => (
@@ -116,7 +116,7 @@ export default function HomePage() {
           <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((c, i) => (
               <StaggerItem key={c.title}>
-                <div className="surface group h-full rounded-2xl p-6 transition-colors hover:border-white/15">
+                <div className="surface group h-full rounded-2xl p-6 transition-colors hover:border-line/15">
                   <span className="font-mono text-xs text-electric-400">0{i + 1}</span>
                   <h3 className="mt-4 text-lg font-semibold text-mist-50">{c.title}</h3>
                   <p className="mt-2.5 text-sm leading-relaxed text-mist-300">{c.body}</p>
@@ -138,7 +138,7 @@ export default function HomePage() {
             />
             <Link
               href="/work"
-              className="hidden shrink-0 items-center gap-1.5 text-sm text-mist-200 hover:text-white sm:inline-flex"
+              className="hidden shrink-0 items-center gap-1.5 text-sm text-mist-200 hover:text-strong sm:inline-flex"
             >
               All work <ArrowRight size={15} />
             </Link>
@@ -149,7 +149,7 @@ export default function HomePage() {
               <Reveal key={cs.slug} delay={i * 0.05}>
                 <Link
                   href={`/work/${cs.slug}`}
-                  className="surface group block overflow-hidden rounded-3xl p-1.5 transition-colors hover:border-white/15"
+                  className="surface group block overflow-hidden rounded-3xl p-1.5 transition-colors hover:border-line/15"
                 >
                   <div className="grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-stretch">
                     <div className="p-6 md:p-8">
@@ -158,7 +158,7 @@ export default function HomePage() {
                         <span className="h-1 w-1 rounded-full bg-mist-500" />
                         <span>{cs.category}</span>
                       </div>
-                      <h3 className="mt-4 text-balance text-2xl font-semibold tracking-tight text-mist-50 group-hover:text-white md:text-3xl">
+                      <h3 className="mt-4 text-balance text-2xl font-semibold tracking-tight text-mist-50 group-hover:text-strong md:text-3xl">
                         {cs.title}
                       </h3>
                       <p className="mt-4 max-w-xl text-pretty text-sm leading-relaxed text-mist-300">
@@ -168,7 +168,7 @@ export default function HomePage() {
                         {cs.metrics.slice(0, 3).map((m) => (
                           <span
                             key={m.label}
-                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-mist-200"
+                            className="rounded-full border border-line/10 bg-line/5 px-3 py-1 text-xs text-mist-200"
                           >
                             <span className="font-semibold text-mist-50">{m.value}</span> {m.label}
                           </span>
@@ -185,7 +185,7 @@ export default function HomePage() {
                     >
                       <div className="absolute inset-0 grid-noise opacity-30 mix-blend-overlay" />
                       <div className="absolute inset-0 bg-ink-950/20" />
-                      <span className="absolute bottom-4 right-5 font-mono text-6xl font-bold text-white/15">
+                      <span className="absolute bottom-4 right-5 font-mono text-6xl font-bold text-line/15">
                         0{i + 1}
                       </span>
                     </div>
@@ -246,7 +246,7 @@ export default function HomePage() {
             <div className="surface-raised relative overflow-hidden rounded-[2rem] px-8 py-16 text-center md:py-24">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric-400/60 to-transparent" />
               <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-[40rem] -translate-x-1/2 rounded-full bg-electric-500/10 blur-3xl" />
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-mist-200">
+              <span className="inline-flex items-center gap-2 rounded-full border border-line/10 bg-line/5 px-3 py-1 text-xs text-mist-200">
                 <Sparkles size={12} className="text-electric-400" /> Let&apos;s build something memorable
               </span>
               <h2 className="mx-auto mt-6 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-mist-50 sm:text-4xl md:text-5xl">

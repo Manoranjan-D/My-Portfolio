@@ -26,7 +26,7 @@ export function WritingList() {
               "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
               filter === c
                 ? "border-electric-400/50 bg-electric-400/10 text-electric-200"
-                : "border-white/10 bg-white/[0.02] text-mist-300 hover:border-white/20 hover:text-white",
+                : "border-line/10 bg-line/[0.02] text-mist-300 hover:border-line/20 hover:text-strong",
             )}
           >
             {c}
@@ -47,17 +47,17 @@ export function WritingList() {
             >
               <Link
                 href={`/writing/${p.slug}`}
-                className="surface group flex h-full flex-col rounded-3xl p-7 transition-colors hover:border-white/15"
+                className="surface group flex h-full flex-col rounded-3xl p-7 transition-colors hover:border-line/15"
               >
                 <div className="flex items-center gap-3 text-xs text-mist-400">
-                  <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-electric-300">
+                  <span className="rounded-full border border-line/10 bg-line/5 px-2.5 py-0.5 text-electric-300">
                     {p.category}
                   </span>
                   <span>{formatDate(p.date)}</span>
                   <span className="h-1 w-1 rounded-full bg-mist-500" />
                   <span>{p.readingTime}</span>
                 </div>
-                <h3 className="mt-4 text-balance text-xl font-semibold tracking-tight text-mist-50 group-hover:text-white">
+                <h3 className="mt-4 text-balance text-xl font-semibold tracking-tight text-mist-50 group-hover:text-strong">
                   {p.title}
                 </h3>
                 <p className="mt-3 flex-1 text-pretty text-sm leading-relaxed text-mist-300">

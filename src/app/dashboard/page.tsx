@@ -25,7 +25,7 @@ function Panel({
   return (
     <div className={`surface rounded-3xl p-6 ${className}`}>
       <div className="flex items-center gap-2.5">
-        <span className="grid h-8 w-8 place-items-center rounded-xl bg-white/5 text-electric-400">
+        <span className="grid h-8 w-8 place-items-center rounded-xl bg-line/5 text-electric-400">
           <Icon size={16} />
         </span>
         <h2 className="text-sm font-semibold uppercase tracking-wider text-mist-200">{title}</h2>
@@ -51,7 +51,7 @@ export default function DashboardPage() {
         }
         intro="Inspired by the /now movement — a living page of what I'm currently learning, building, reading, and tracking. Less résumé, more pulse."
       >
-        <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-mist-300">
+        <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-line/10 bg-line/5 px-3 py-1.5 text-xs text-mist-300">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-jade-400" />
           Last updated {dashboard.updated}
         </p>
@@ -82,7 +82,7 @@ export default function DashboardPage() {
                         <span className="text-sm font-medium text-mist-100">{l.label}</span>
                         <span className="text-xs text-mist-400">{l.detail}</span>
                       </div>
-                      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/8">
+                      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-line/8">
                         <div
                           className="h-full rounded-full bg-gradient-to-r from-electric-400 to-violet-400"
                           style={{ width: `${l.progress}%` }}
@@ -101,7 +101,7 @@ export default function DashboardPage() {
                     <li key={g.label} className="flex items-start gap-2.5 text-sm text-mist-300">
                       <span
                         className={`mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full border ${
-                          g.done ? "border-jade-400 bg-jade-400/20 text-jade-400" : "border-white/20"
+                          g.done ? "border-jade-400 bg-jade-400/20 text-jade-400" : "border-line/20"
                         }`}
                       >
                         {g.done && "✓"}
@@ -117,7 +117,7 @@ export default function DashboardPage() {
               <Panel title="Currently building" icon={Hammer}>
                 <div className="space-y-3">
                   {dashboard.building.map((b) => (
-                    <div key={b.label} className="rounded-2xl border border-white/8 bg-white/[0.02] p-4">
+                    <div key={b.label} className="rounded-2xl border border-line/8 bg-line/[0.02] p-4">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-medium text-mist-100">{b.label}</span>
                         <span className="rounded-full bg-electric-400/10 px-2 py-0.5 text-[10px] text-electric-300">
@@ -164,7 +164,7 @@ export default function DashboardPage() {
               <Panel title="Life metrics · fitness" icon={Activity}>
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
                   {dashboard.fitness.map((f) => (
-                    <div key={f.label} className="rounded-2xl border border-white/8 bg-white/[0.02] p-4 text-center">
+                    <div key={f.label} className="rounded-2xl border border-line/8 bg-line/[0.02] p-4 text-center">
                       <div className="text-2xl font-semibold text-mist-50">{f.value}</div>
                       <div className="mt-1 text-xs text-mist-400">{f.label}</div>
                     </div>

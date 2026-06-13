@@ -38,7 +38,7 @@ export function HeroVisual() {
             <div key={row.label} className="flex items-center gap-3">
               <row.icon size={14} className="text-mist-400" />
               <span className="w-24 text-xs text-mist-300">{row.label}</span>
-              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/8">
+              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-line/8">
                 <motion.div
                   className={`h-full rounded-full ${row.color}`}
                   initial={{ width: 0 }}
@@ -51,7 +51,7 @@ export function HeroVisual() {
           ))}
         </div>
 
-        <div className="mt-4 flex items-center gap-2 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2">
+        <div className="mt-4 flex items-center gap-2 rounded-xl border border-line/8 bg-line/[0.03] px-3 py-2">
           <GitBranch size={13} className="text-electric-400" />
           <span className="font-mono text-[11px] text-mist-300">deploy</span>
           <div className="ml-auto flex items-center gap-1">

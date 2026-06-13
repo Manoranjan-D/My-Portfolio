@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/primitives";
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto border-t border-white/8 pt-20">
+    <footer className="relative mt-auto border-t border-line/8 pt-20">
       <Container>
         <div className="grid gap-12 pb-16 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="max-w-sm">
@@ -33,7 +33,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-mist-200 transition-colors hover:text-white"
+                    className="text-sm text-mist-200 transition-colors hover:text-strong"
                   >
                     {item.label}
                   </Link>
@@ -53,7 +53,7 @@ export function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1.5 text-sm text-mist-200 transition-colors hover:text-white"
+                    className="group inline-flex items-center gap-1.5 text-sm text-mist-200 transition-colors hover:text-strong"
                   >
                     {s.label}
                     <ArrowUpRight
@@ -67,7 +67,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start justify-between gap-3 border-t border-white/8 py-8 sm:flex-row sm:items-center">
+        <div className="flex flex-col items-start justify-between gap-3 border-t border-line/8 py-8 sm:flex-row sm:items-center">
           <p className="text-xs text-mist-400">
             © {new Date().getFullYear()} Manoranjan D. Built with intent.
           </p>

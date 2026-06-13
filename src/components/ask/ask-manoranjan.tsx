@@ -63,14 +63,14 @@ export function AskManoranjan() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         whileHover={{ y: -2 }}
-        className="group fixed bottom-5 right-5 z-50 flex items-center gap-2.5 rounded-full border border-white/12 bg-ink-800/80 py-2.5 pl-3 pr-4 text-sm text-mist-100 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.7)] backdrop-blur-xl transition-colors hover:border-electric-400/40"
+        className="group fixed bottom-5 right-5 z-50 flex items-center gap-2.5 rounded-full border border-line/12 bg-ink-800/80 py-2.5 pl-3 pr-4 text-sm text-mist-100 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.7)] backdrop-blur-xl transition-colors hover:border-electric-400/40"
         aria-label="Ask Manoranjan"
       >
         <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-electric-400 to-violet-500">
           <Sparkles size={14} className="text-white" />
         </span>
         <span className="font-medium">Ask Manoranjan</span>
-        <kbd className="hidden items-center gap-0.5 rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] text-mist-400 sm:flex">
+        <kbd className="hidden items-center gap-0.5 rounded border border-line/10 bg-line/5 px-1.5 py-0.5 text-[10px] text-mist-400 sm:flex">
           <Command size={9} />K
         </kbd>
       </motion.button>
@@ -96,7 +96,7 @@ export function AskManoranjan() {
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="surface-raised relative flex max-h-[70vh] w-full max-w-xl flex-col overflow-hidden rounded-3xl shadow-2xl"
             >
-              <div className="flex items-center justify-between border-b border-white/8 px-5 py-4">
+              <div className="flex items-center justify-between border-b border-line/8 px-5 py-4">
                 <div className="flex items-center gap-2.5">
                   <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-electric-400 to-violet-500">
                     <Sparkles size={13} className="text-white" />
@@ -109,7 +109,7 @@ export function AskManoranjan() {
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close"
-                  className="grid h-8 w-8 place-items-center rounded-full text-mist-400 hover:bg-white/5 hover:text-white"
+                  className="grid h-8 w-8 place-items-center rounded-full text-mist-400 hover:bg-line/5 hover:text-strong"
                 >
                   <X size={16} />
                 </button>
@@ -126,7 +126,7 @@ export function AskManoranjan() {
                         "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed",
                         m.role === "user"
                           ? "bg-electric-500 text-white"
-                          : "bg-white/5 text-mist-100",
+                          : "bg-line/5 text-mist-100",
                       )}
                     >
                       {m.text}
@@ -135,7 +135,7 @@ export function AskManoranjan() {
                 ))}
                 {typing && (
                   <div className="flex justify-start">
-                    <div className="flex gap-1 rounded-2xl bg-white/5 px-4 py-3">
+                    <div className="flex gap-1 rounded-2xl bg-line/5 px-4 py-3">
                       {[0, 1, 2].map((d) => (
                         <motion.span
                           key={d}
@@ -155,7 +155,7 @@ export function AskManoranjan() {
                     <button
                       key={q}
                       onClick={() => send(q)}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-mist-200 transition-colors hover:border-electric-400/40 hover:text-white"
+                      className="rounded-full border border-line/10 bg-line/5 px-3 py-1.5 text-xs text-mist-200 transition-colors hover:border-electric-400/40 hover:text-strong"
                     >
                       {q}
                     </button>
@@ -168,7 +168,7 @@ export function AskManoranjan() {
                   e.preventDefault();
                   send(input);
                 }}
-                className="flex items-center gap-2 border-t border-white/8 p-3"
+                className="flex items-center gap-2 border-t border-line/8 p-3"
               >
                 <input
                   ref={inputRef}

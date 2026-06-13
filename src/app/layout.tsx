@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AskManoranjan } from "@/components/ask/ask-manoranjan";
+import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/lib/data/site";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -58,20 +59,23 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${display.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-full flex-col">
-        {/* Ambient aurora backdrop */}
-        <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-          <div className="absolute -top-40 left-1/2 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-electric-500/12 blur-[120px] animate-aurora" />
-          <div className="absolute top-1/3 -right-40 h-[34rem] w-[34rem] rounded-full bg-violet-500/10 blur-[120px]" />
-          <div className="absolute inset-0 grid-noise opacity-60" />
-        </div>
+        <ThemeProvider>
+          {/* Ambient aurora backdrop */}
+          <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+            <div className="absolute -top-40 left-1/2 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-electric-500/12 blur-[120px] animate-aurora" />
+            <div className="absolute top-1/3 -right-40 h-[34rem] w-[34rem] rounded-full bg-violet-500/10 blur-[120px]" />
+            <div className="absolute inset-0 grid-noise opacity-60" />
+          </div>
 
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <AskManoranjan />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <AskManoranjan />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -62,7 +62,7 @@ export default function EntrepreneurshipPage() {
                       <span className="grid h-11 w-11 place-items-center rounded-2xl bg-jade-400/10 text-jade-400">
                         <Icon size={20} />
                       </span>
-                      <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-mist-300">
+                      <span className="rounded-full border border-line/10 bg-line/5 px-3 py-1 text-xs text-mist-300">
                         {v.stage}
                       </span>
                     </div>

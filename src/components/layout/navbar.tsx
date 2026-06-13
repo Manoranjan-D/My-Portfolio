@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { nav, site } from "@/lib/data/site";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -32,7 +33,7 @@ export function Navbar() {
         className={cn(
           "flex w-full max-w-5xl items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-500 sm:px-5",
           scrolled
-            ? "border-white/10 bg-ink-900/70 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+            ? "border-line/10 bg-ink-900/70 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl"
             : "border-transparent bg-transparent",
         )}
       >
@@ -54,13 +55,13 @@ export function Navbar() {
                   href={item.href}
                   className={cn(
                     "relative rounded-full px-3.5 py-2 text-sm transition-colors",
-                    active ? "text-white" : "text-mist-300 hover:text-white",
+                    active ? "text-strong" : "text-mist-300 hover:text-strong",
                   )}
                 >
                   {active && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-white/8"
+                      className="absolute inset-0 -z-10 rounded-full bg-line/8"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -71,7 +72,8 @@ export function Navbar() {
           })}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
+          <ThemeToggle />
           <Button href="/contact" size="sm" variant="accent" className="hidden sm:inline-flex">
             Let&apos;s Connect
           </Button>
@@ -79,7 +81,7 @@ export function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
-            className="grid h-9 w-9 place-items-center rounded-full text-mist-200 hover:bg-white/5 lg:hidden"
+            className="grid h-9 w-9 place-items-center rounded-full text-mist-200 hover:bg-line/5 lg:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -93,7 +95,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute left-4 right-4 top-20 rounded-3xl border border-white/10 bg-ink-850/95 p-4 backdrop-blur-xl lg:hidden"
+            className="absolute left-4 right-4 top-20 rounded-3xl border border-line/10 bg-ink-850/95 p-4 backdrop-blur-xl lg:hidden"
           >
             <ul className="flex flex-col gap-1">
               {nav.map((item) => (
@@ -101,7 +103,7 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     onClick={close}
-                    className="block rounded-2xl px-4 py-3 text-base text-mist-100 hover:bg-white/5"
+                    className="block rounded-2xl px-4 py-3 text-base text-mist-100 hover:bg-line/5"
                   >
                     {item.label}
                   </Link>
