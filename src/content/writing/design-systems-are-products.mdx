@@ -1,0 +1,33 @@
+The first design system I built failed. Not technically — the components were fine, the tokens were clean, the Storybook was beautiful. It failed because almost nobody used it. That failure taught me the most important lesson of my career: **a design system is a product, and its users are engineers.**
+
+## The technical part is the easy part
+
+Building an accessible button, a robust select, a themeable table — these are solved problems. You can read the WAI-ARIA authoring practices, lean on headless primitives, and ship something correct in an afternoon.
+
+What you can't ship in an afternoon is *adoption*. And adoption is where systems live or die.
+
+## Adoption is a product problem
+
+When a team chooses to keep their hand-rolled components instead of yours, they're not being stubborn. They're making a rational product decision: your system, as it exists today, isn't better for them than what they have.
+
+So treat them like users. Ask the questions any product person would:
+
+- What's the cost of switching, and how do I lower it?
+- What's the moment of value, and how do I get them there faster?
+- Where's the friction in the first five minutes?
+
+For the system that worked, the answers became **codemods** (so migration was a reviewable diff, not a week of manual edits) and a **weekly office hour** (so a human unblocked adopters in real time). Those two things moved the needle more than any individual component ever did.
+
+## Governance is the moat
+
+A system without governance decays into a graveyard of one-off variants. The discipline that keeps it alive:
+
+1. **Semantic tokens as a contract.** Designers own `surface`, `accent`, `danger`. Engineers own how those map to pixels. The brand can change without touching component code.
+2. **Accessibility as the default path.** If the accessible way is also the easy way, people fall into the pit of success.
+3. **A real deprecation process.** Things change. The system has to make change cheap, not forbidden.
+
+## The metric that matters
+
+Not component count. Not Storybook stars. The metric is **time to a polished baseline** for a new app. When that drops from weeks to day one, the system has paid for itself — and everyone can feel it.
+
+Build the system like a product, and engineers will choose it. Build it like a side project, and they'll quietly route around you.

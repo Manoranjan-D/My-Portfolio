@@ -1,0 +1,33 @@
+There's a particular kind of dashboard every enterprise eventually builds: thousands of rows, live updates, rich per-cell rendering, and a user who needs all of it on one screen. It works beautifully in the demo with 50 rows of seed data. Then real data shows up, and the whole thing freezes for four seconds on every keystroke.
+
+I've rebuilt that dashboard. Here's how I think about performance now.
+
+## Latency is the most universal UX problem
+
+You can argue about colour and copy forever. Nobody argues about a four-second freeze. Speed is the one quality every single user perceives, and a fast interface is the most fundamental form of respect for someone's time.
+
+That reframing matters: performance isn't a cleanup task you do at the end. It's a feature you design for from the start.
+
+## Measure against production-scale data
+
+The bottlenecks at 100 rows are nothing like the ones at 10,000. If you profile against seed data, you'll optimise the wrong things.
+
+> Profile production-scale fixtures, fix in order of user-perceived impact, and codify the wins as budgets.
+
+For the dashboard, flame charts pointed at three culprits: rendering everything at once, recomputing aggregates on every keystroke, and shipping a bundle far larger than any one view needed.
+
+## The three levers
+
+1. **Virtualise the list.** Only visible rows mount. DOM node count becomes constant regardless of dataset size.
+2. **Get work off the main thread.** Heavy aggregation moved into a Web Worker, so input and scrolling stayed buttery while the numbers crunched.
+3. **Split the bundle.** Route- and view-level code splitting with Suspense meant each screen loaded only what it needed.
+
+The result: interaction latency fell from ~4.1s to ~0.7s, scrolling held 60fps, and the JS payload shrank 68%.
+
+## Perceived performance is half the battle
+
+Raw numbers aren't the whole story. Thoughtful loading and streaming states, optimistic updates, and debounced inputs make an interface *feel* instant even before the deeper fixes land. Never make the user stare at a blocking spinner when you could show them progress or a confident optimistic result.
+
+## Make it a gate, not a memory
+
+The hardest part of performance work is that it silently regresses. The fix is to put a budget in CI — Lighthouse CI, bundle-size checks — so a regression fails the build. Performance you don't enforce is performance you'll lose.
