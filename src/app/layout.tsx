@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { AskManoranjan } from "@/components/ask/ask-manoranjan";
+import { CommandPalette } from "@/components/command/command-palette";
 import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/lib/data/site";
 
@@ -74,7 +74,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
-          <AskManoranjan />
+          <CommandPalette />
         </ThemeProvider>
       </body>
     </html>

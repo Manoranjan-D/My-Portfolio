@@ -5,6 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { Container, Section } from "@/components/ui/primitives";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
+import { ReadingProgress } from "@/components/article/reading-progress";
+import { TableOfContents } from "@/components/article/table-of-contents";
 import { posts, getPost } from "@/lib/data/writing";
 
 const loaders: Record<string, () => Promise<{ default: React.ComponentType }>> = {
@@ -49,6 +51,7 @@ export default async function ArticlePage({
 
   return (
     <article>
+      <ReadingProgress />
       <section className="relative overflow-hidden pt-32 pb-6 md:pt-40">
         <Container>
           <Link
@@ -79,7 +82,12 @@ export default async function ArticlePage({
       </section>
 
       <Container>
-        <div className="mx-auto max-w-2xl border-t border-line/8 pt-10">
+        <div className="relative mx-auto max-w-2xl border-t border-line/8 pt-10">
+          <div className="absolute inset-y-0 left-full top-10 ml-6 hidden xl:block">
+            <div className="sticky top-28 w-48">
+              <TableOfContents />
+            </div>
+          </div>
           <Content />
         </div>
       </Container>

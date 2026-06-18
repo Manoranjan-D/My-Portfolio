@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search, Command } from "lucide-react";
 import { nav, site } from "@/lib/data/site";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
@@ -73,6 +73,18 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            aria-label="Open command palette"
+            onClick={() => window.dispatchEvent(new Event("open-command-palette"))}
+            className="hidden items-center gap-2 rounded-full border border-line/10 bg-line/[0.03] py-1.5 pl-3 pr-2 text-sm text-mist-400 transition-colors hover:border-line/20 hover:text-mist-100 md:flex"
+          >
+            <Search size={14} />
+            <span className="text-xs">Search</span>
+            <kbd className="flex items-center gap-0.5 rounded border border-line/10 bg-line/5 px-1.5 py-0.5 text-[10px]">
+              <Command size={9} />K
+            </kbd>
+          </button>
           <ThemeToggle />
           <Button href="/contact" size="sm" variant="accent" className="hidden sm:inline-flex">
             Let&apos;s Connect

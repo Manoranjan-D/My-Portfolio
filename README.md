@@ -57,8 +57,11 @@ npm run lint
 + sitemap.xml, robots.txt, custom 404
 ```
 
-A floating **"Ask Manoranjan"** assistant (⌘K / Ctrl-K) is available on every
-page — a command-palette-style chat answering questions about experience, skills,
+A unified **⌘K command palette** is available on every page (also via the navbar
+search button and a floating trigger). It has two modes: **command** — fuzzy-search
+navigation across pages, case studies, and articles plus actions (toggle theme,
+download résumé, copy email, social links), all keyboard-driven; and **ask** — the
+**"Ask Manoranjan"** assistant answering questions about experience, skills,
 projects, philosophy, and career direction.
 
 ## Folder structure
@@ -117,7 +120,9 @@ Meaningful, never decorative. Scroll-triggered reveals (`Reveal`/`Stagger`) fade
 lift, and de-blur once on enter; animated metric counters (`Counter`) ease in when
 visible; the nav uses a shared-layout active pill; the hero renders a live-feeling
 engineering dashboard with animated scores and floating chips; page-level
-micro-interactions on hover. All motion respects `prefers-reduced-motion`.
+micro-interactions on hover. Route changes animate via `app/template.tsx`, and
+long-form articles get a scroll-linked reading-progress bar plus a scroll-spy table
+of contents. All motion respects `prefers-reduced-motion`.
 
 ## SEO
 
