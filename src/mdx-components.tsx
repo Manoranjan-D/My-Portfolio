@@ -9,7 +9,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
     h3: (props) => (
-      <h3 className="mt-8 text-xl font-semibold text-mist-50" {...props} />
+      <h3 className="mt-8 scroll-mt-28 text-xl font-semibold text-mist-50" {...props} />
     ),
     p: (props) => (
       <p className="mt-5 text-pretty leading-relaxed text-mist-300" {...props} />

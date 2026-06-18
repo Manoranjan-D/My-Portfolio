@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { AskManoranjan } from "@/components/ask/ask-manoranjan";
+import { CommandPalette } from "@/components/command/command-palette";
 import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/lib/data/site";
 
@@ -63,6 +63,15 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${display.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-full flex-col">
+        {/* Pre-hydration theme: runs before paint to set the class, preventing
+            a flash. Rendered by this Server Component, so it never enters the
+            client render tree (no React 19 inline-script warning). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t='dark';}var e=document.documentElement;e.classList.remove('light','dark');e.classList.add(t);e.style.colorScheme=t;}catch(e){}})();",
+          }}
+        />
         <ThemeProvider>
           {/* Ambient aurora backdrop */}
           <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -74,7 +83,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
-          <AskManoranjan />
+          <CommandPalette />
         </ThemeProvider>
       </body>
     </html>
