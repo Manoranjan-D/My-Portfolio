@@ -1,14 +1,14 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import { motion, AnimatePresence } from "motion/react";
 import { Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme();
-  // `resolvedTheme` is undefined on the server / first paint; treat that as
-  // dark (the default theme). suppressHydrationWarning absorbs the icon swap.
+  // On the server we default to dark; suppressHydrationWarning absorbs the
+  // icon swap if the client resolves to light.
   const isDark = resolvedTheme !== "light";
 
   return (

@@ -63,6 +63,15 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${display.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-full flex-col">
+        {/* Pre-hydration theme: runs before paint to set the class, preventing
+            a flash. Rendered by this Server Component, so it never enters the
+            client render tree (no React 19 inline-script warning). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t='dark';}var e=document.documentElement;e.classList.remove('light','dark');e.classList.add(t);e.style.colorScheme=t;}catch(e){}})();",
+          }}
+        />
         <ThemeProvider>
           {/* Ambient aurora backdrop */}
           <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
