@@ -31,13 +31,13 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
-          "grid w-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-full border px-4 py-2.5 transition-all duration-500 sm:px-5",
+          "flex w-full max-w-6xl items-center gap-6 rounded-full border px-4 py-2.5 transition-all duration-500 sm:px-5",
           scrolled
             ? "border-line/10 bg-ink-900/70 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl"
             : "border-transparent bg-transparent",
         )}
       >
-        <Link href="/" className="group col-start-1 flex items-center gap-2.5 justify-self-start">
+        <Link href="/" className="group flex shrink-0 items-center gap-2.5">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-electric-400 to-violet-500 text-sm font-bold text-white">
             M
           </span>
@@ -46,7 +46,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <ul className="col-start-2 hidden items-center gap-1 justify-self-center xl:flex">
+        <ul className="hidden items-center gap-0.5 xl:flex">
           {nav.map((item) => {
             const active = pathname === item.href || pathname.startsWith(item.href + "/");
             return (
@@ -54,7 +54,7 @@ export function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "relative rounded-full px-3 py-2 text-sm transition-colors",
+                    "relative whitespace-nowrap rounded-full px-3 py-2 text-sm transition-colors",
                     active ? "text-strong" : "text-mist-300 hover:text-strong",
                   )}
                 >
@@ -72,7 +72,7 @@ export function Navbar() {
           })}
         </ul>
 
-        <div className="col-start-3 flex items-center gap-1.5 justify-self-end">
+        <div className="ml-auto flex items-center gap-1.5">
           <button
             type="button"
             aria-label="Open command palette"
