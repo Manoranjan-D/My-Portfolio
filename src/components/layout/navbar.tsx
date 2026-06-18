@@ -31,13 +31,13 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
-          "flex w-full max-w-5xl items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-500 sm:px-5",
+          "grid w-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-full border px-4 py-2.5 transition-all duration-500 sm:px-5",
           scrolled
             ? "border-line/10 bg-ink-900/70 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl"
             : "border-transparent bg-transparent",
         )}
       >
-        <Link href="/" className="group flex items-center gap-2.5">
+        <Link href="/" className="group col-start-1 flex items-center gap-2.5 justify-self-start">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-electric-400 to-violet-500 text-sm font-bold text-white">
             M
           </span>
@@ -46,7 +46,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="col-start-2 hidden items-center gap-1 justify-self-center xl:flex">
           {nav.map((item) => {
             const active = pathname === item.href || pathname.startsWith(item.href + "/");
             return (
@@ -54,7 +54,7 @@ export function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "relative rounded-full px-3.5 py-2 text-sm transition-colors",
+                    "relative rounded-full px-3 py-2 text-sm transition-colors",
                     active ? "text-strong" : "text-mist-300 hover:text-strong",
                   )}
                 >
@@ -72,15 +72,14 @@ export function Navbar() {
           })}
         </ul>
 
-        <div className="flex items-center gap-1.5">
+        <div className="col-start-3 flex items-center gap-1.5 justify-self-end">
           <button
             type="button"
             aria-label="Open command palette"
             onClick={() => window.dispatchEvent(new Event("open-command-palette"))}
-            className="hidden items-center gap-2 rounded-full border border-line/10 bg-line/[0.03] py-1.5 pl-3 pr-2 text-sm text-mist-400 transition-colors hover:border-line/20 hover:text-mist-100 md:flex"
+            className="hidden h-9 items-center gap-2 rounded-full border border-line/10 bg-line/[0.03] pl-3 pr-2 text-mist-400 transition-colors hover:border-line/20 hover:text-mist-100 xl:flex"
           >
             <Search size={14} />
-            <span className="text-xs">Search</span>
             <kbd className="flex items-center gap-0.5 rounded border border-line/10 bg-line/5 px-1.5 py-0.5 text-[10px]">
               <Command size={9} />K
             </kbd>
@@ -93,7 +92,7 @@ export function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
-            className="grid h-9 w-9 place-items-center rounded-full text-mist-200 hover:bg-line/5 lg:hidden"
+            className="grid h-9 w-9 place-items-center rounded-full text-mist-200 hover:bg-line/5 xl:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -107,7 +106,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute left-4 right-4 top-20 rounded-3xl border border-line/10 bg-ink-850/95 p-4 backdrop-blur-xl lg:hidden"
+            className="absolute left-4 right-4 top-20 mx-auto max-w-6xl rounded-3xl border border-line/10 bg-ink-850/95 p-4 backdrop-blur-xl xl:hidden"
           >
             <ul className="flex flex-col gap-1">
               {nav.map((item) => (
